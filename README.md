@@ -28,6 +28,43 @@ None of these commands call a model or need an API key. The Claude examples
 run their tool checks offline by default. To run them against Claude, see
 [claude_agents/README.md](claude_agents/README.md).
 
+## Demo: the same search with and without Ten-Grd
+
+[demo/rag_agent_demo.py](demo/rag_agent_demo.py) is a single-file RAG agent:
+two tenants share one Qdrant collection, both store a refund policy under the
+same ID, and one tenant's vector is the closer match. Claude gets a
+`search_policy` tool that takes no tenant argument; Ten-Grd scopes every search
+to the tenant the host set.
+
+[demo/compare_scope.py](demo/compare_scope.py) sends the tool's exact query
+straight to Qdrant and then through Ten-Grd. No API key needed:
+
+```sh
+python demo/compare_scope.py
+```
+
+```text
+Without Ten-Grd:
+  globex  globex refunds within 90 days.
+  acme    acme refunds within 30 days.
+
+With Ten-Grd as acme:
+  [ok] acme    acme refunds within 30 days.
+```
+
+Without the tenant restriction, the query returns both tenants' documents.
+Ten-Grd adds that restriction to every search through the retriever, checks it
+with the Z3 solver, and checks each result's owner. Code that queries Qdrant
+directly still bypasses it.
+
+To run the agent live, set `ANTHROPIC_API_KEY` in your shell and pass a model ID
+(default `claude-sonnet-5-5`). It makes two short Claude sessions, each capped at
+USD 0.25:
+
+```sh
+python demo/rag_agent_demo.py claude-sonnet-5-5
+```
+
 ## Tests
 
 ```sh

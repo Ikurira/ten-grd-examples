@@ -34,3 +34,5 @@ jobs:
       # Offline checks only: no API key is configured and no model is called.
       - run: python -m claude_agents.memory_agent
       - run: python -m claude_agents.rag_agent
+      - run: python demo/compare_scope.py
+      - run: python -m py_compile demo/rag_agent_demo.py  # Live only; needs an API key.
