@@ -1,0 +1,41 @@
+site_name: Ten-Grd
+site_description: Tenant isolation guards for developers building agentic tools
+site_url: https://ikurira.github.io/ten-grd-examples/
+repo_url: https://github.com/Ikurira/ten-grd-examples
+repo_name: ten-grd-examples
+edit_uri: ""
+
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - navigation.sections
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - tables
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+nav:
+  - Overview: index.md
+  - Examples: examples.md
+  - Integrations: integrations.md
+  - Threat model: threat-model.md
+  - Technical specification: technical-specification.md
+  - Security regression guide: security-regression-guide.md
+
+# integrations.md, threat-model.md, technical-specification.md and
+# security-regression-guide.md are copied from the Ten-Grd source repository,
+# whose CI fails if they differ. Change them there first.
