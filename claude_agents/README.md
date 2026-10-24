@@ -21,7 +21,7 @@ python -m pip install -r requirements.txt
 ```
 
 This installs Ten-Grd from PyPI with the example dependencies pinned to the
-versions used for validation: ten-grd 0.2.1, Claude Agent SDK 0.2.172, MCP 2.3.0
+versions used for validation: ten-grd 0.2.2, Claude Agent SDK 0.2.172, MCP 2.3.0
 and Qdrant client 1.19.1.
 
 ## Check locally without calling Claude

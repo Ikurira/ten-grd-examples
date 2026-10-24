@@ -1,5 +1,5 @@
 # Pinned to the versions these examples are validated against.
-ten-grd[qdrant]==0.2.1
+ten-grd[qdrant]==0.2.2
 claude-agent-sdk==0.2.172
 mcp==2.3.0
 qdrant-client==1.19.1
