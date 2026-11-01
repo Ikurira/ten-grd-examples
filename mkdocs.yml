@@ -31,6 +31,7 @@ markdown_extensions:
 nav:
   - Overview: index.md
   - Examples: examples.md
+  - Leak probe: probe.md
   - Integrations: integrations.md
   - Threat model: threat-model.md
   - Technical specification: technical-specification.md

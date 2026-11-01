@@ -76,6 +76,8 @@ adapter.
 ## Next steps
 
 - [Examples](examples.md): runnable scripts, including Claude Agent SDK agents.
+- [Leak probe](probe.md): check an agent you already built for cross-tenant
+  leaks, whether or not it uses Ten-Grd (preview).
 - [Integrations](integrations.md): PostgreSQL, SQLite, Qdrant, Redis and LangChain.
 - [Security regression guide](security-regression-guide.md): attack patterns
   drawn from published advisories.
