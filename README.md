@@ -65,6 +65,13 @@ USD 0.25:
 python demo/rag_agent_demo.py claude-sonnet-5-5
 ```
 
+## Probe your own agent for leaks (preview)
+
+`ten-grd probe` plants a unique canary in each synthetic test tenant and tries to
+reach it from the others, through an agent you already built. See the
+[leak probe guide](https://ikurira.github.io/ten-grd-examples/probe/), including
+what a clean result does and does not mean.
+
 ## Tests
 
 ```sh
